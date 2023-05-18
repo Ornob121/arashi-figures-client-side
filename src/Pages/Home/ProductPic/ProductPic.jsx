@@ -1,3 +1,4 @@
+import "react-tabs/style/react-tabs.css";
 const ProductPic = () => {
   return (
     <div className="mt-10 px-20">
