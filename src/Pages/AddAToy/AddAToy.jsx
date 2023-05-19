@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 //
 const AddAToy = () => {
   // ! Input values
@@ -14,10 +16,18 @@ const AddAToy = () => {
     const availableQuantity = form.available.value;
     const details = form.description.value;
     if (rating > 5) {
-      return alert("Your Rating Cannot be more than 5");
+      return Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Your Rating cannot be more than 5",
+      });
     }
     if (subcategory === "Select One") {
-      return alert("Please select one subcategory");
+      return Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "You have to chose one Sub-Category",
+      });
     }
     const toy = {
       name,
@@ -41,7 +51,16 @@ const AddAToy = () => {
       body: JSON.stringify(toy),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          Swal.fire({
+            icon: "success",
+            title: "Great",
+            text: "The Toy Is Added",
+          });
+        }
+      });
   };
 
   return (
