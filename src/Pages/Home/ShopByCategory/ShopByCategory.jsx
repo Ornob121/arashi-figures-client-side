@@ -7,7 +7,7 @@ import "@smastrom/react-rating/style.css";
 
 const ShopByCategory = () => {
   const toys = useLoaderData();
-  const [filteredToys, setFilteredToys] = useState(toys);
+  const [filteredToys, setFilteredToys] = useState([]);
   //   console.log(toys);
 
   //! Use to filter the data of the toys
@@ -74,19 +74,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -114,19 +115,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -154,19 +156,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -209,19 +212,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -249,19 +253,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -289,19 +294,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -346,19 +352,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -386,19 +393,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
@@ -426,19 +434,20 @@ const ShopByCategory = () => {
                         {toy.name}
                       </h2>
                       <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                        <div>
-                          <p className="text-lg font-medium">
+                        <span>
+                          <span className="text-lg font-medium">
                             Price: ${toy.price}
-                          </p>
-                          <p>Rating:{toy.rating}</p>
-                          <p>
+                          </span>
+                          <br />
+                          <span>Rating:{toy.rating}</span>
+                          <span>
                             <Rating
                               style={{ maxWidth: 100 }}
                               value={toy?.rating || 0}
                               readOnly
                             />
-                          </p>
-                        </div>
+                          </span>
+                        </span>
                         <button
                           onClick={() => navigate(`/toyDetails/${toy._id}`)}
                           className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
