@@ -1,7 +1,20 @@
+import { useContext } from "react";
 import logo from "../../../../public/image/globalfreakslogo1-svg.jpg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        toast("Log Out Successful");
+      })
+      .catch();
+  };
   const nav = (
     <>
       <li className="font-semibold text-xl">
@@ -40,13 +53,31 @@ const NavBar = () => {
   );
   const logUser = (
     <>
-      <li className="btn btn-outline">
+      <li onClick={() => navigate("/login")} className="btn btn-outline">
         <NavLink
           className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/login"
         >
           Login
         </NavLink>
+      </li>
+    </>
+  );
+
+  const loggedUser = (
+    <>
+      <li>
+        <img
+          title={user?.displayName}
+          src={user?.photoURL || "https://i.ibb.co/Mg3s53G/user.jpg"}
+          className="w-12 h-12 rounded-full mr-6 cursor-pointer"
+          alt=""
+        />
+      </li>
+      <li>
+        <Link onClick={handleLogOut} className="btn btn-outline">
+          LogOut
+        </Link>
       </li>
     </>
   );
@@ -87,7 +118,11 @@ const NavBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-3">{nav}</ul>
       </div>
-      <ul className="navbar-end">{logUser}</ul>
+      {user ? (
+        <ul className="navbar-end">{loggedUser}</ul>
+      ) : (
+        <ul className="navbar-end">{logUser}</ul>
+      )}
     </div>
   );
 };

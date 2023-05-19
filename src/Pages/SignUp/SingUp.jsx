@@ -6,18 +6,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
 
-const Login = () => {
-  const { handleLogInUser, handleGoogleLogin, handleGitHubLogin } =
+const SignUp = () => {
+  const { handleCreateUser, handleGoogleLogin, handleGitHubLogin } =
     useContext(AuthContext);
 
   const [viewPass, setViewPass] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  //   ! Google Log in
-  const googleLogIn = () => {
+  //   ! Google sign in
+  const googleSignIn = () => {
     handleGoogleLogin()
       .then((result) => {
         const newUser = result.user;
@@ -30,7 +31,8 @@ const Login = () => {
         console.log(err.message);
       });
   };
-  const gitHubLogIn = () => {
+  //   ! GitHub sign in
+  const gitHubSignIn = () => {
     handleGitHubLogin()
       .then((result) => {
         const newUser = result.user;
@@ -44,24 +46,33 @@ const Login = () => {
       });
   };
 
-  const handleLogin = (event) => {
+  const handleSignUpForm = (event) => {
     event.preventDefault();
     const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
-    handleLogInUser(email, password)
+    if (password.length < 6) {
+      return setError("Your Password Must Be More Than 6 Characters");
+    }
+    console.log(name, email, password, photo);
+    handleCreateUser(email, password)
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
+        const newUser = result.user;
+        console.log(newUser);
+        updateProfile(newUser, {
+          displayName: name,
+          photoURL: photo,
+        });
         setError("");
         navigate("/");
-        toast("Login Successful");
+        toast("SingUp Successful");
       })
       .catch((err) => {
         console.log(err.message);
-        if (err.message.includes("auth/user-not-found")) {
-          setError("User Not found please sign up");
+        if (err.message.includes("email-already-in-use")) {
+          setError("This email is already in use. Please Login");
         }
       });
   };
@@ -73,11 +84,21 @@ const Login = () => {
         Welcome
       </h3>
       <p className="text-xl font-medium text-green-700 text-center pt-2 capitalize">
-        Login to continue to Arashi Figures
+        SingUp to continue to Arashi Figures
       </p>
-      <p className="text-xl text-center text-red-500">{error}</p>
-      <form onSubmit={handleLogin}>
+      <p className="text-red-500 text-xl text-center">{error}</p>
+      <form onSubmit={handleSignUpForm}>
         <div className="mx-auto w-[80%] pt-7">
+          <input
+            type="text"
+            name="name"
+            required
+            className="border border-[#fef7f7] w-full bg-gray-100 py-3 px-4 text-lg rounded-md"
+            placeholder="Your Name"
+          />
+        </div>
+
+        <div className="mx-auto w-[80%] py-4">
           <input
             type="email"
             name="email"
@@ -87,7 +108,7 @@ const Login = () => {
             placeholder="Your Email"
           />
         </div>
-        <div className="mx-auto w-[80%] pt-4">
+        <div className="mx-auto w-[80%]">
           <input
             type={`${viewPass ? "text" : "password"}`}
             name="password"
@@ -109,19 +130,27 @@ const Login = () => {
             />
           )}
         </div>
+        <div className="mx-auto w-[80%] pb-6">
+          <input
+            type="text"
+            name="photo"
+            className="border border-[#fef7f7] w-full bg-gray-100 py-3 px-4 text-lg rounded-md"
+            placeholder="Photo URL"
+          />
+        </div>
         <div className=" w-[80%] mx-auto">
           <button
             className="btn-block bg-green-700 font-semibold text-lg rounded py-3 text-white"
             type="submit"
           >
-            Login
+            Sign Up
           </button>
         </div>
         <div className=" w-[80%] mx-auto mt-4">
           <p className="capitalize text-lg">
-            Don't have an account?{" "}
-            <Link to="/signUp" className=" btn-link">
-              SignUp
+            Already have an account?{" "}
+            <Link to="/logIn" className=" btn-link">
+              Login
             </Link>
           </p>
         </div>
@@ -133,17 +162,17 @@ const Login = () => {
       </div>
       <div
         className="mx-auto w-[80%] py-3 px-4 h-14 mb-4 border border-gray-300 pb-6 flex items-center gap-4 rounded-md cursor-pointer"
-        onClick={googleLogIn}
+        onClick={googleSignIn}
       >
         <img
           src={googleLogo}
           className="w-10 mt-4 h-10"
           alt="Google Icon For SignUp"
         />
-        <span className="mt-3 text-xl font-semibold">Login With Google</span>
+        <span className="mt-3 text-xl font-semibold">Sign Up With Google</span>
       </div>
       <div
-        onClick={gitHubLogIn}
+        onClick={gitHubSignIn}
         className="mx-auto w-[80%] py-3 px-4 h-14 mb-16 border border-gray-300 pb-6 flex items-center gap-4 rounded-md cursor-pointer"
       >
         <img
@@ -151,10 +180,10 @@ const Login = () => {
           className="w-10 mt-4 h-10"
           alt="GitHub Icon for sign up"
         />
-        <span className="mt-3 text-xl font-semibold">Login With GitHub</span>
+        <span className="mt-3 text-xl font-semibold">Sign Up With GitHub</span>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

@@ -179,7 +179,7 @@ const AddAToy = () => {
           <div className="form-control my-5">
             <label className="input-group">
               <textarea
-                className="textarea border border-[gray] w-full h-[200px]"
+                className="textarea border text-xl border-[gray] w-full h-[200px]"
                 placeholder="Product Description"
                 name="description"
                 required
