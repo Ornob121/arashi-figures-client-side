@@ -9,7 +9,7 @@ const ToyDetails = () => {
     image,
     name,
     sellerName,
-    email,
+    sellerEmail,
     details,
     availableQuantity,
     price,
@@ -26,7 +26,7 @@ const ToyDetails = () => {
           <span className="font-bold">Seller Name:</span> {sellerName}
         </p>
         <p className="text-xl mb-2">
-          <span className="font-bold">Seller Email:</span> {email}
+          <span className="font-bold">Seller Email:</span> {sellerEmail}
         </p>
         <p className="text-xl mb-2">
           <span className="font-bold"> In Stock:</span> {availableQuantity}
