@@ -42,7 +42,7 @@ const NavBar = () => {
     <>
       <li className="btn btn-outline">
         <NavLink
-          className={({ isActive }) => (isActive ? "btn-success" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/login"
         >
           Login
