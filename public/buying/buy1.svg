@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="110" height="100" viewBox="0 0 110 100">
+    <g fill="none" fill-rule="evenodd">
+        <g transform="rotate(10 -19.866 102.05)">
+            <path stroke="#3A4461" stroke-linecap="round" stroke-linejoin="round" d="M25 0h20l-6.822 10.916c-1.755 2.808-4.6 2.809-6.356 0L25 0z"/>
+            <path stroke="#3A4461" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15.667 2l9.666-2h19.334l9.666 2L70 17.333l-12.648 10.61L52.833 24l-.5 15.333 2 20.667H15.667l2-20.667-.5-15.333-4.589 3.91L0 17.334z"/>
+            <circle cx="35.305" cy="25.305" r="6.5" fill="#E32C1B"/>
+        </g>
+        <g stroke="#3A4461" stroke-linejoin="round">
+            <path fill="#FFF" stroke-linecap="round" stroke-width="3" d="M51.376 60.398l1.416-8.027-37.554-6.621-1.425 8.082L1.87 75.886l8.908 2.506-.392 1.027 8.82 2.48-.304 1.052 9.677 2.722.174-.985 10.022.752.076-1.192 8.15.611.02-1.342 9.364-.05-5.009-23.069z"/>
+            <path stroke-linecap="square" d="M13.914 53.64s9.24 2.304 18.596 3.953c9.356 1.65 18.827 2.645 18.827 2.645"/>
+            <path stroke-linecap="round" d="M33.183 57.71l-4.8 27.224M40.009 58.914l-2.285 24.933M45.85 59.944l.056 23.626M26.358 56.507l-6.554 25.196M19.532 55.304l-8.48 24.151"/>
+        </g>
+        <g stroke="#3A4461" stroke-linejoin="round" transform="rotate(-10 323.839 -253.88)">
+            <path fill="#FFF" stroke-linecap="round" stroke-width="3" d="M2.513.5h14.501s3.241 5.91 12.36 11.351c3.51 2.096 14.917 5.208 19.377 6.96 5.238 2.059 4.736 4.032 4.736 4.032v5.35S50.254 30.5 43.46 30.5H1.507S.5 25.643.5 17.262 2.513.5 2.513.5z"/>
+            <circle cx="10" cy="16" r="4.5" stroke-linecap="round"/>
+            <path stroke-linecap="round" d="M1.5 24.5h39c7.045 0 11.339-2.016 11.339-2.016"/>
+            <path stroke-linecap="square" d="M45.5 17.5c-3.11 1.782-4.022 6.683-4.022 6.683"/>
+            <path stroke-linecap="round" d="M19.5 4.5l-3 1M21.5 7.5l-2.566 1.354M25.106 10.069l-2.89 1.845M28.5 12.5l-2 2M32.5 14.5l-1.64 1.987M37.22 16L36 18.455"/>
+        </g>
+    </g>
+</svg>
