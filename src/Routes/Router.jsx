@@ -10,6 +10,7 @@ import SignUp from "../Pages/SignUp/SingUp";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateMyToys from "../Pages/Update/UpdateMyToys";
+import Blogs from "../Pages/Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "signUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "blogs",
+        element: <Blogs></Blogs>,
       },
     ],
   },
