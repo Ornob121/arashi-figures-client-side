@@ -21,7 +21,7 @@ const AllToys = () => {
   };
 
   return (
-    <div className="px-20 mt-16">
+    <div className="md:px-20 mt-16">
       <div className="form-control text-center mx-auto">
         <div>
           <input

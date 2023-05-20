@@ -3,14 +3,14 @@ import buy2 from "../../../../public/buying/buy2.svg";
 import buy3 from "../../../../public/buying/buy3.svg";
 const Buying = () => {
   return (
-    <div className="mt-16 pb-8 bg-[#F3F3F3] px-20">
+    <div className="mt-16 pb-8 bg-[#F3F3F3] md:px-20">
       <h5 className="text-3xl font-bold text-red-400 text-center pt-12 pb-3">
         How To Buy?
       </h5>
       <h3 className="text-center text-green-500 font-medium text-2xl pb-6 capitalize">
         Buying from us has never been more simple
       </h3>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-3">
         <div className="pb-10">
           <img src={buy1} className="mx-auto" alt="" />
           <p className="text-center text-lg font-bold">Tell us what to buy</p>

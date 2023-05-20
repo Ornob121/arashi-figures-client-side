@@ -1,7 +1,7 @@
 import "react-tabs/style/react-tabs.css";
 const ProductPic = () => {
   return (
-    <div className="mt-10 px-20">
+    <div className="mt-20 md:px-20">
       <h3 className="text-center text-3xl font-semibold text-green-800">
         Here Are Some Of Our Product Images
       </h3>
@@ -27,7 +27,7 @@ const ProductPic = () => {
             alt=""
           />
         </div>
-        <div data-aos="slide-right" data-aos-delay="400">
+        <div data-aos="slide-up" data-aos-delay="400">
           <img
             className="w-[500px] h-[400px] shadow-md rounded-md"
             src="https://i.ibb.co/jHFtwRp/img4.jpg"
@@ -41,7 +41,7 @@ const ProductPic = () => {
             alt=""
           />
         </div>
-        <div data-aos="slide-left" data-aos-delay="400">
+        <div data-aos="slide-up" data-aos-delay="400">
           <img
             className="w-[500px] h-[400px] shadow-md rounded-md"
             src="https://i.ibb.co/KWvMLSy/img6.jpg"

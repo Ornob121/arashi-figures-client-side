@@ -29,7 +29,7 @@ const ShopByCategory = () => {
   //   ! Use navigate
   const navigate = useNavigate();
   return (
-    <div className="px-20 my-16">
+    <div className="md:px-20 my-16">
       <h2 className="text-center text-4xl font-semibold text-green-600 mb-10">
         Shop By Category
       </h2>

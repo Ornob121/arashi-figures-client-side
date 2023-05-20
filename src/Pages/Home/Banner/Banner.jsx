@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Banner() {
   return (
-    <>
+    <div className="md:h-full h-[150px]">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -31,6 +31,7 @@ export default function Banner() {
         <SwiperSlide>
           <img
             style={{ height: "414px" }}
+            className="md:w-full w-[500px]"
             src="https://i.ibb.co/82KPJ5D/banner1.webp"
             alt=""
           />
@@ -99,6 +100,6 @@ export default function Banner() {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }

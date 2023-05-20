@@ -65,9 +65,9 @@ const Footer = () => {
     </>
   );
   return (
-    <footer className="bg-black w-full px-20 text-white relative bottom-0">
+    <footer className="bg-black w-full md:px-20 px-8 text-white relative bottom-0">
       <div>
-        <div className="grid grid-cols-3 py-8 items-center gap-40">
+        <div className="grid md:grid-cols-3 py-8 items-center gap-8 md:gap-40">
           <div className="flex items-center py-4 gap-3">
             <div className="border-2 w-[90px] border-white rounded-full">
               <img
@@ -89,14 +89,14 @@ const Footer = () => {
             </p>
             <input
               type="email"
-              className="w-[70%] py-3 bg-black border-2 border-orange-600 mt-4 rounded-3xl"
+              className="w-[70%] py-3 bg-black border-2 outline-0 border-orange-600 mt-4 rounded-3xl"
             />
-            <button className="uppercase text-lg font-medium  bg-red-600 py-[14px] px-7 rounded-3xl relative right-36">
+            <button className="uppercase text-lg font-medium  bg-red-600 py-[14px] px-7 rounded-3xl mt-4 md:mt-0 ml-24 md:ml-0 md:relative md:right-36">
               Subscribe
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-4 pb-8">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-16 md:gap-0 pb-8">
           <div>
             <h2 className="text-2xl font-bold text-orange-600 mb-4">Help</h2>
             <ul>{help}</ul>
