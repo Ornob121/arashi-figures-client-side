@@ -1,4 +1,7 @@
+import useTitle from "../../hooks/useTitle";
+
 const Blogs = () => {
+  useTitle("| Blogs");
   return (
     <div>
       <div className="px-[200px]  my-12">

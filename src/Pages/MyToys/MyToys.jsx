@@ -2,12 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../hooks/useTitle";
 
 //
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const navigate = useNavigate();
+  useTitle("| My Toys");
 
   const url = `http://localhost:5000/myToys?email=${user?.email}`;
 

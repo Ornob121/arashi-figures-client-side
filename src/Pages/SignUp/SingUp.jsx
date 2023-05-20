@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-toastify";
+import useTitle from "../../hooks/useTitle";
 
 const SignUp = () => {
   const { handleCreateUser, handleGoogleLogin, handleGitHubLogin } =
@@ -16,6 +17,7 @@ const SignUp = () => {
   const [viewPass, setViewPass] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  useTitle("| Sign Up");
 
   //   ! Google sign in
   const googleSignIn = () => {

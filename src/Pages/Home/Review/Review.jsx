@@ -23,7 +23,12 @@ const Review = () => {
   return (
     <div className="px-20 py-24 bg-blue-950">
       <div className="grid grid-cols-3 gap-5 items-center">
-        <div className="text-white border-r-4 border-white">
+        <div
+          className="text-white border-r-4 border-white"
+          data-aos="fade-left"
+          data-aos-easing="ease-in-sine"
+          data-aos-delay="500"
+        >
           <h5 className="text-lg uppercase pb-4">TESTIMONIALS</h5>
           <h6 className="text-3xl font-bold pb-6">
             What Our Clients Say About Us

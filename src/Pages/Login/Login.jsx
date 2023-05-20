@@ -7,10 +7,13 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { handleLogInUser, handleGoogleLogin, handleGitHubLogin } =
     useContext(AuthContext);
+
+  useTitle("| Login");
 
   const [viewPass, setViewPass] = useState(false);
   const [error, setError] = useState("");

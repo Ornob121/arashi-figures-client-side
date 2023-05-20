@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 //
 const ToyDetails = () => {
@@ -15,6 +16,7 @@ const ToyDetails = () => {
     price,
     rating,
   } = singleToy;
+  useTitle("| Toy Details");
   return (
     <div className="my-20 grid grid-cols-1 md:grid-cols-2 mx-auto px-20 items-center">
       <div>
