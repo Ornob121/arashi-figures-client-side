@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 //
 const AllToys = () => {
@@ -9,6 +11,7 @@ const AllToys = () => {
   console.log(filteredBySearchToys);
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState("");
+  const { user } = useContext(AuthContext);
   console.log(searchText);
   useTitle("| All Toys");
 
@@ -89,7 +92,12 @@ const AllToys = () => {
                 <td className="text-center">{toy.availableQuantity}</td>
                 <th>
                   <button
-                    onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                    onClick={() => {
+                      navigate(`/toyDetails/${toy._id}`);
+                      if (!user) {
+                        toast("You Have To login first");
+                      }
+                    }}
                     className="btn btn-ghost btn-xs"
                   >
                     details
