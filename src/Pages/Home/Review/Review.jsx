@@ -16,7 +16,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 const Review = () => {
   const [customerReviews, setCustomerReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allReviews")
+    fetch("https://arashi-figures-server.vercel.app/allReviews")
       .then((res) => res.json())
       .then((data) => setCustomerReviews(data));
   }, []);

@@ -49,7 +49,7 @@ const AddAToy = () => {
     console.log(toy);
 
     // ! Add a toy in server api
-    fetch("http://localhost:5000/addAToy", {
+    fetch("https://arashi-figures-server.vercel.app/addAToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

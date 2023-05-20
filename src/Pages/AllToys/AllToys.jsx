@@ -15,7 +15,9 @@ const AllToys = () => {
   //   ! Search
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/allToysSearch/${searchText}`)
+    fetch(
+      `https://arashi-figures-server.vercel.app/allToysSearch/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => setFilteredBySearchToys(data));
   };

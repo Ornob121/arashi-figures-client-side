@@ -58,13 +58,16 @@ const UpdateMyToys = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // ! Add a toy in server api
-        fetch(`http://localhost:5000/updateYourToy/${updateToy._id}`, {
-          method: "PUT",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(updatedToy),
-        })
+        fetch(
+          `https://arashi-figures-server.vercel.app/updateYourToy/${updateToy._id}`,
+          {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(updatedToy),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

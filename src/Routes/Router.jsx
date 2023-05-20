@@ -21,12 +21,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () => fetch("https://arashi-figures-server.vercel.app/allToys"),
       },
       {
         path: "allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/allToysLimit"),
+        loader: () =>
+          fetch("https://arashi-figures-server.vercel.app/allToysLimit"),
       },
       {
         path: "toyDetails/:id",
@@ -36,7 +37,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singleToy/${params.id}`),
+          fetch(
+            `https://arashi-figures-server.vercel.app/singleToy/${params.id}`
+          ),
       },
       {
         path: "addAToy",
@@ -62,7 +65,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singleToy/${params.id}`),
+          fetch(
+            `https://arashi-figures-server.vercel.app/singleToy/${params.id}`
+          ),
       },
       {
         path: "logIn",

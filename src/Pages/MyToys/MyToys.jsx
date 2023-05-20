@@ -9,15 +9,20 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
   const navigate = useNavigate();
+  const [sort, setSort] = useState("default");
+  console.log(sort);
   useTitle("| My Toys");
 
-  const url = `http://localhost:5000/myToys?email=${user?.email}`;
+  const url = `https://arashi-figures-server.vercel.app/myToys/${sort}/?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setMyToys(data));
-  }, [url]);
+      .then((data) => {
+        setMyToys(data);
+      });
+  }, [url, sort]);
+  console.log(setMyToys);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -29,7 +34,7 @@ const MyToys = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // ! Add a toy in server api
-        fetch(`http://localhost:5000/deleteToy/${id}`, {
+        fetch(`https://arashi-figures-server.vercel.app/deleteToy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -61,6 +66,14 @@ const MyToys = () => {
 
   return (
     <div className="px-20 mt-16">
+      <div className="flex text-lg">
+        <p className="pr-3">Sort By:</p>
+        <select name="sort" onChange={(e) => setSort(e.target.value)} id="">
+          <option value="default">Default</option>
+          <option value="priceUp">High Price</option>
+          <option value="priceDown">Low Price</option>
+        </select>
+      </div>
       <div className="form-control text-center mx-auto"></div>
       <div className="overflow-x-auto w-full my-12">
         <table className="table w-full">

@@ -70,6 +70,14 @@ const Login = () => {
         if (err.message.includes("auth/user-not-found")) {
           setError("User Not found please sign up");
         }
+        if (err.message.includes("auth/wrong-password")) {
+          setError("Your password is not a match please try again");
+        }
+        if (err.message.includes("too-many-requests")) {
+          setError(
+            "Access to this account has been temporarily disabled due to many failed login attempts."
+          );
+        }
       });
   };
 
