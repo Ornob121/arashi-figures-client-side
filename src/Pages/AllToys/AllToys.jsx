@@ -78,7 +78,7 @@ const AllToys = () => {
                   </div>
                 </td>
                 <td>
-                  <p>{toy.name}</p>
+                  <p>{toy?.name || ""}</p>
                 </td>
                 <td className="text-center">{toy.subcategory}</td>
                 <td className="text-center">${toy.price}</td>

@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import { toast } from "react-toastify";
 
 const ShopByCategory = () => {
   const toys = useLoaderData();
@@ -93,7 +94,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -130,7 +134,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -167,7 +174,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -204,7 +214,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -241,7 +254,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -278,7 +294,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -315,7 +334,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -352,7 +374,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details
@@ -389,7 +414,10 @@ const ShopByCategory = () => {
                         </span>
                       </span>
                       <button
-                        onClick={() => navigate(`/toyDetails/${toy._id}`)}
+                        onClick={() => {
+                          navigate(`/toyDetails/${toy._id}`);
+                          toast("You Have To login first");
+                        }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
                         Details

@@ -15,7 +15,7 @@ const NavBar = () => {
       })
       .catch();
   };
-  const nav = (
+  const nav1 = (
     <>
       <li className="font-semibold text-xl">
         <NavLink
@@ -49,8 +49,46 @@ const NavBar = () => {
           Add A Toy
         </NavLink>
       </li>
+      <li className="font-semibold text-xl">
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-green-500" : "")}
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+      </li>
     </>
   );
+
+  const nav2 = (
+    <>
+      <li className="font-semibold text-xl">
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-green-500" : "")}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li className="font-semibold text-xl">
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-green-500" : "")}
+          to="/allToys"
+        >
+          All Toys
+        </NavLink>
+      </li>
+      <li className="font-semibold text-xl">
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-green-500" : "")}
+          to="/blogs"
+        >
+          Blogs
+        </NavLink>
+      </li>
+    </>
+  );
+
   const logUser = (
     <>
       <li onClick={() => navigate("/login")} className="btn btn-outline">
@@ -105,7 +143,7 @@ const NavBar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52 bg-black text-white"
           >
-            {nav}
+            {nav1}
           </ul>
         </div>
         <Link className="flex items-center gap-2" to="/">
@@ -116,7 +154,11 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-3">{nav}</ul>
+        {user ? (
+          <ul className="menu menu-horizontal px-3">{nav1}</ul>
+        ) : (
+          <ul className="menu menu-horizontal px-3">{nav2}</ul>
+        )}
       </div>
       {user ? (
         <ul className="navbar-end">{loggedUser}</ul>

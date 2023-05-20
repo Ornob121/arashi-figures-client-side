@@ -4,7 +4,7 @@ import googleLogo from "../../../public/icons/google-white.png";
 import gitHubLogo from "../../../public/icons/whitebg-github.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -16,6 +16,10 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  console.log(location);
+
   //   ! Google Log in
   const googleLogIn = () => {
     handleGoogleLogin()
@@ -23,7 +27,7 @@ const Login = () => {
         const newUser = result.user;
         console.log(newUser);
         setError("");
-        navigate("/");
+        navigate(from, { replace: true });
         toast("Login Successful");
       })
       .catch((err) => {
@@ -36,7 +40,7 @@ const Login = () => {
         const newUser = result.user;
         console.log(newUser);
         setError("");
-        navigate("/");
+        navigate(from, { replace: true });
         toast("Login Successful");
       })
       .catch((err) => {
@@ -55,7 +59,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         setError("");
-        navigate("/");
+        navigate(from, { replace: true });
         toast("Login Successful");
       })
       .catch((err) => {
