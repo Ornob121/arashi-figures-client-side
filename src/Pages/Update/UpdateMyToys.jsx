@@ -158,9 +158,9 @@ const UpdateMyToys = () => {
                 <option value="One Piece">One Piece</option>
                 <option value="Attack on Titan">Attack on Titan</option>
                 <option value="Hunter x Hunter">Hunter x Hunter</option>
-                <option value="Batman">Batman</option>
-                <option value="Superman">Superman</option>
-                <option value="Wonder Women">Wonder Women</option>
+                <option value="Bleach">Bleach</option>
+                <option value="Jujutsu Kaisen">Jujutsu Kaisen</option>
+                <option value="Naruto">Naruto</option>
                 <option value="Captain America">Captain America</option>
                 <option value="Thor">Thor</option>
                 <option value="Ironman">Ironman</option>

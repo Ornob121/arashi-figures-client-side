@@ -1,14 +1,16 @@
 import Banner from "../Banner/Banner";
 import Buying from "../Buying/Buying";
 import ProductPic from "../ProductPic/ProductPic";
+import Review from "../Review/Review";
 import ShopByCategory from "../ShopByCategory/ShopByCategory";
 
 const Home = () => {
   return (
-    <div className="my-12">
+    <div className="mt-12">
       <Banner></Banner>
       <ProductPic></ProductPic>
       <ShopByCategory></ShopByCategory>
+      <Review></Review>
       <Buying></Buying>
     </div>
   );

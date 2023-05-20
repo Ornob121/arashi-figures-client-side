@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../../provider/AuthProvider";
 
 const ShopByCategory = () => {
   const toys = useLoaderData();
   const [filteredToys, setFilteredToys] = useState([]);
   //   console.log(toys);
+  const { user } = useContext(AuthContext);
 
   //! Use to filter the data of the toys
   const [subCategoryFilteredText, setSubCategoryFilteredText] =
@@ -48,23 +50,14 @@ const ShopByCategory = () => {
               >
                 Hunter X Hunter
               </Tab>
-              <Tab onClick={() => setSubCategoryFilteredText("Batman")}>
-                Batman
+              <Tab onClick={() => setSubCategoryFilteredText("Bleach")}>
+                Bleach
               </Tab>
-              <Tab onClick={() => setSubCategoryFilteredText("Superman")}>
-                Superman
+              <Tab onClick={() => setSubCategoryFilteredText("Jujutsu Kaisen")}>
+                Jujutsu Kaisen
               </Tab>
-              <Tab onClick={() => setSubCategoryFilteredText("Wonder Women")}>
-                Wonder Women
-              </Tab>
-              <Tab
-                onClick={() => setSubCategoryFilteredText("Captain America")}
-              >
-                Captain America
-              </Tab>
-              <Tab onClick={() => setSubCategoryFilteredText("Thor")}>Thor</Tab>
-              <Tab onClick={() => setSubCategoryFilteredText("Ironman")}>
-                Ironman
+              <Tab onClick={() => setSubCategoryFilteredText("Naruto")}>
+                Naruto
               </Tab>
             </TabList>
             <TabPanel>
@@ -96,7 +89,9 @@ const ShopByCategory = () => {
                       <button
                         onClick={() => {
                           navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
+                          if (!user) {
+                            toast("You Have To login first");
+                          }
                         }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
@@ -136,7 +131,9 @@ const ShopByCategory = () => {
                       <button
                         onClick={() => {
                           navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
+                          if (!user) {
+                            toast("You Have To login first");
+                          }
                         }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
@@ -176,7 +173,9 @@ const ShopByCategory = () => {
                       <button
                         onClick={() => {
                           navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
+                          if (!user) {
+                            toast("You Have To login first");
+                          }
                         }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
@@ -216,7 +215,9 @@ const ShopByCategory = () => {
                       <button
                         onClick={() => {
                           navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
+                          if (!user) {
+                            toast("You Have To login first");
+                          }
                         }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
@@ -256,7 +257,9 @@ const ShopByCategory = () => {
                       <button
                         onClick={() => {
                           navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
+                          if (!user) {
+                            toast("You Have To login first");
+                          }
                         }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
@@ -296,127 +299,9 @@ const ShopByCategory = () => {
                       <button
                         onClick={() => {
                           navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
-                        }}
-                        className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
-                      >
-                        Details
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
-                  <div
-                    key={toy._id}
-                    className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
-                  >
-                    <img src={toy.image} className="w-52 mx-auto h-52" alt="" />
-                    <h2 className="text-center text-2xl font-semibold text-green-700 mb-6">
-                      {toy.name}
-                    </h2>
-                    <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                      <span>
-                        <span className="text-lg font-medium">
-                          Price: ${toy.price}
-                        </span>
-                        <br />
-                        <span>Rating:{toy.rating}</span>
-                        <span>
-                          <Rating
-                            style={{ maxWidth: 100 }}
-                            value={toy?.rating || 0}
-                            readOnly
-                          />
-                        </span>
-                      </span>
-                      <button
-                        onClick={() => {
-                          navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
-                        }}
-                        className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
-                      >
-                        Details
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
-                  <div
-                    key={toy._id}
-                    className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
-                  >
-                    <img src={toy.image} className="w-52 mx-auto h-52" alt="" />
-                    <h2 className="text-center text-2xl font-semibold text-green-700 mb-6">
-                      {toy.name}
-                    </h2>
-                    <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                      <span>
-                        <span className="text-lg font-medium">
-                          Price: ${toy.price}
-                        </span>
-                        <br />
-                        <span>Rating:{toy.rating}</span>
-                        <span>
-                          <Rating
-                            style={{ maxWidth: 100 }}
-                            value={toy?.rating || 0}
-                            readOnly
-                          />
-                        </span>
-                      </span>
-                      <button
-                        onClick={() => {
-                          navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
-                        }}
-                        className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
-                      >
-                        Details
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </TabPanel>
-            <TabPanel>
-              <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
-                  <div
-                    key={toy._id}
-                    className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
-                  >
-                    <img src={toy.image} className="w-52 mx-auto h-52" alt="" />
-                    <h2 className="text-center text-2xl font-semibold text-green-700 mb-6">
-                      {toy.name}
-                    </h2>
-                    <div className="flex items-center justify-between absolute bottom-8 left-5 right-5">
-                      <span>
-                        <span className="text-lg font-medium">
-                          Price: ${toy.price}
-                        </span>
-                        <br />
-                        <span>Rating:{toy.rating}</span>
-                        <span>
-                          <Rating
-                            style={{ maxWidth: 100 }}
-                            value={toy?.rating || 0}
-                            readOnly
-                          />
-                        </span>
-                      </span>
-                      <button
-                        onClick={() => {
-                          navigate(`/toyDetails/${toy._id}`);
-                          toast("You Have To login first");
+                          if (!user) {
+                            toast("You Have To login first");
+                          }
                         }}
                         className="text-xl font-bold bg-green-500 py-2 px-4 rounded-md text-white"
                       >
