@@ -57,7 +57,7 @@ const Review = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper mt-12"
           >
-            {customerReviews.map((review) => (
+            {customerReviews?.map((review) => (
               <SwiperSlide
                 style={{ backgroundColor: "rgb(23 37 84)" }}
                 key={review._id}

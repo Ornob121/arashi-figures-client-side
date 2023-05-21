@@ -69,7 +69,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredBySearchToys.map((toy, i) => (
+            {filteredBySearchToys?.map((toy, i) => (
               <tr key={toy._id}>
                 <td>{i + 1}</td>
                 <th>

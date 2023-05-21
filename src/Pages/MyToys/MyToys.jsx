@@ -92,7 +92,7 @@ const MyToys = () => {
             </tr>
           </thead>
           <tbody>
-            {myToys.map((toy, i) => (
+            {myToys?.map((toy, i) => (
               <tr key={toy._id}>
                 <td>{i + 1}</td>
                 <th>

@@ -9,7 +9,7 @@ import { AuthContext } from "../../../provider/AuthProvider";
 
 const ShopByCategory = () => {
   const toys = useLoaderData();
-  const [filteredToys, setFilteredToys] = useState([]);
+  const [filteredToys, setFilteredToys] = useState(toys);
   //   console.log(toys);
   const { user } = useContext(AuthContext);
 
@@ -62,7 +62,7 @@ const ShopByCategory = () => {
             </TabList>
             <TabPanel>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
+                {filteredToys?.map((toy) => (
                   <div
                     key={toy._id}
                     className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
@@ -123,7 +123,7 @@ const ShopByCategory = () => {
             </TabPanel>
             <TabPanel>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
+                {filteredToys?.map((toy) => (
                   <div
                     key={toy._id}
                     className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
@@ -184,7 +184,7 @@ const ShopByCategory = () => {
             </TabPanel>
             <TabPanel>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
+                {filteredToys?.map((toy) => (
                   <div
                     key={toy._id}
                     className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
@@ -245,7 +245,7 @@ const ShopByCategory = () => {
             </TabPanel>
             <TabPanel>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
+                {filteredToys?.map((toy) => (
                   <div
                     key={toy._id}
                     className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
@@ -306,7 +306,7 @@ const ShopByCategory = () => {
             </TabPanel>
             <TabPanel>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
+                {filteredToys?.map((toy) => (
                   <div
                     key={toy._id}
                     className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
@@ -367,7 +367,7 @@ const ShopByCategory = () => {
             </TabPanel>
             <TabPanel>
               <div className="grid grid-cols-1 md:grid-cols-3">
-                {filteredToys.map((toy) => (
+                {filteredToys?.map((toy) => (
                   <div
                     key={toy._id}
                     className="mx-auto mt-5 p-4 w-3/4 rounded-lg shadow-xl border border-[whitesmoke] h-[450px] relative"
