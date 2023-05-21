@@ -90,7 +90,7 @@ const AllToys = () => {
                 <td className="text-center">{toy.subcategory}</td>
                 <td className="text-center">${toy.price}</td>
                 <td className="text-center">{toy.availableQuantity}</td>
-                <th>
+                <td>
                   <button
                     onClick={() => {
                       navigate(`/toyDetails/${toy._id}`);
@@ -102,7 +102,7 @@ const AllToys = () => {
                   >
                     details
                   </button>
-                </th>
+                </td>
               </tr>
             ))}
           </tbody>

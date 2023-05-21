@@ -87,6 +87,7 @@ const MyToys = () => {
               <th>Sub-Category</th>
               <th>Price</th>
               <th>Available</th>
+              <th>Details</th>
               <th>Update</th>
               <th>Delete</th>
             </tr>
@@ -115,20 +116,30 @@ const MyToys = () => {
                 <td className="text-center">{toy.availableQuantity}</td>
                 <th>
                   <button
+                    onClick={() => {
+                      navigate(`/toyDetails/${toy._id}`);
+                    }}
+                    className="btn btn-ghost btn-xs"
+                  >
+                    details
+                  </button>
+                </th>
+                <td>
+                  <button
                     onClick={() => navigate(`/updateMyToys/${toy._id}`)}
                     className="btn btn-ghost btn-xs"
                   >
                     Update
                   </button>
-                </th>
-                <th>
+                </td>
+                <td>
                   <button
                     onClick={() => handleDelete(toy._id)}
                     className="btn btn-ghost btn-xs"
                   >
                     Delete
                   </button>
-                </th>
+                </td>
               </tr>
             ))}
           </tbody>

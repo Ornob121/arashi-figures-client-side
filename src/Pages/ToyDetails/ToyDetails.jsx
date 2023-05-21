@@ -20,7 +20,7 @@ const ToyDetails = () => {
   return (
     <div className="my-20 grid grid-cols-1 gap-8 md:grid-cols-2 mx-auto md:px-20 items-center">
       <div>
-        <img src={image} className="mx-auto max-h-[680px]" alt="" />
+        <img src={image} className="mx-auto max-h-[680px] rounded-xl" alt="" />
       </div>
       <div>
         <h2 className="text-5xl font-semibold mb-12">{name}</h2>
