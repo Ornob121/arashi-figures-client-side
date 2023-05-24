@@ -18,7 +18,7 @@ const UpdateMyToys = () => {
     const sellerName = form.sellerName.value;
     const sellerEmail = form.email.value;
     const subcategory = form.subcategory.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const availableQuantity = form.available.value;
     const details = form.description.value;
